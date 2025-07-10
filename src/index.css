@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  background-color: #a0522d;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.wave-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 120px;
+  z-index: 5;
+  pointer-events: none;
+  animation: waveMove 12s linear infinite;
+}
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wave-bg2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 120px;
+  z-index: 4;
+  pointer-events: none;
+  animation: waveMove2 20s linear infinite;
+}
+@keyframes waveMove2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-30%); }
+}
