@@ -8,8 +8,10 @@ import Services from './pages/Services';
 import ProductDemo from './pages/ProductDemo';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import Products from './pages/Products';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import BookDemo from './pages/BookDemo';
 
 function App() {
   useEffect(() => {
@@ -28,6 +30,8 @@ function App() {
             <Route path="/demo" element={<ProductDemo />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/book-demo" element={<BookDemo />} />
           </Routes>
         </main>
         <Footer />

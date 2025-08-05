@@ -4,7 +4,7 @@ import { Linkedin, Mail, Award, Users, Coffee, MapPin } from 'lucide-react';
 const Team: React.FC = () => {
   const leadership = [
     {
-      name: 'Dr. Sarah Chen',
+      name: 'Challa vijayarama Naidu',
       role: 'CEO & Co-Founder',
       bio: 'Former VP of Engineering at Tesla Autopilot with 15+ years in robotics and AI. PhD in Robotics from MIT.',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -12,7 +12,7 @@ const Team: React.FC = () => {
       linkedin: '#'
     },
     {
-      name: 'Michael Rodriguez',
+      name: 'Jaya Prakash Yarlagadda',
       role: 'CTO & Co-Founder',
       bio: 'Former Principal Engineer at Amazon Robotics. Led development of autonomous warehouse systems serving millions of customers.',
       image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -20,7 +20,7 @@ const Team: React.FC = () => {
       linkedin: '#'
     },
     {
-      name: 'Emily Johnson',
+      name: 'Kishore',
       role: 'VP of Engineering',
       bio: 'Former Senior Director at Boston Dynamics. Expert in autonomous navigation and fleet coordination systems.',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300',

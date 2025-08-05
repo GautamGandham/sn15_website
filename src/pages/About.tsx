@@ -47,7 +47,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20 bg-saddlebrown-50">
+        <section className="py-20" style={{ backgroundColor: '#e0e0e0' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="border-2 border-brand rounded-xl p-8 bg-white/80">
@@ -56,9 +56,7 @@ const About: React.FC = () => {
                   <h2 className="text-3xl font-bold text-primary-900">Our Mission</h2>
                 </div>
                 <p className="text-metallic-700 text-lg leading-relaxed mb-6">
-                  To democratize food automation robotics by making cutting-edge robotics and AI accessible 
-                  to businesses of all sizes. We believe that every food business should have the power of 
-                  intelligent automation to optimize operations and drive growth.
+                We strive to transform industries by integrating Generative AI, computer vision, and smart automation into practical, scalable solutions. Our goal is to create intelligent systems that enhance daily tasks, streamline operations, and bring futuristic technology to life.
                 </p>
                 <p className="text-metallic-700 text-lg leading-relaxed">
                   Our technology not only increases efficiency but also creates safer working environments 
@@ -72,8 +70,7 @@ const About: React.FC = () => {
                   <h2 className="text-3xl font-bold text-primary-900">Our Vision</h2>
                 </div>
                 <p className="text-metallic-700 text-lg leading-relaxed mb-6">
-                  To become the global leader in intelligent food automation robotics, setting new standards 
-                  for efficiency, reliability, and innovation in the food industry.
+                To empower businesses with cutting-edge Agentic AI solutions that automate processes, enhance user experiences, and enable real-time decision-making.
                 </p>
                 <p className="text-metallic-700 text-lg leading-relaxed">
                   We envision a future where autonomous systems seamlessly integrate with human workers, 
@@ -85,75 +82,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Our Projects */}
-        <section className="py-20 bg-saddlebrown-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
-                Our Products
-              </h2>
-              <p className="text-xl text-metallic-600 max-w-3xl mx-auto">
-                We are passionate about building innovative automation solutions for everyday needs. Here are some of our flagship and upcoming projects:
-              </p>
-            </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Automated Coffee Machine - Rotate In Animation */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center"
-                initial={{ opacity: 0, rotateY: -90, scale: 0.8 }}
-                whileInView={{ opacity: 1, rotateY: 0, scale: 1 }}
-                viewport={{ amount: 0.3 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                whileHover={{ 
-                  y: -10, 
-                  rotateY: 5,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <motion.img 
-                  src={coffeeImg} 
-                  alt="Automated Coffee Machine" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <h3 className="text-xl font-bold text-primary-900 mb-2">Automated Coffee Machine</h3>
-                <p className="text-metallic-700 text-center">A smart coffee machine that automates the brewing process, offering a perfect cup every time with minimal human intervention. Ideal for offices, cafes, and public spaces.</p>
-              </motion.div>
-              
-              {/* Automated Chutney Dispenser - Slide from Left Animation */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center"
-                initial={{ opacity: 0, x: -100, y: 50 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ amount: 0.3 }}
-                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                whileHover={{ 
-                  x: 10, 
-                  y: -10,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <motion.img 
-                  src={chutneyImg} 
-                  alt="Automated Chutney Dispenser" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-                <h3 className="text-xl font-bold text-primary-900 mb-2">Automated Chutney Dispenser</h3>
-                <p className="text-metallic-700 text-center">A hygienic, programmable dispenser for serving chutneys and sauces, designed for restaurants and food courts to ensure consistency and reduce waste.</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        {/* Products section removed as requested */}
 
         {/* Company Timeline */}
         <section className="py-20 bg-saddlebrown-200" id="our-journey">

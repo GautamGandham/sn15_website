@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, TrendingUp, Users, CheckCircle } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import bg1Video from '../assets/bg1.mp4';
 
 const roboticsVideo = 'https://videos.pexels.com/video-files/8561925/8561925-hd_1920_1080_25fps.mp4';
+
+// Custom hook for count up animation
+function useCountUp(target: number, duration = 1200, trigger: boolean) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!trigger) {
+      setValue(0);
+      return;
+    }
+    let start = 0;
+    const startTime = performance.now();
+    function animate(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.floor(progress * (target - start) + start);
+      setValue(current);
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+    requestAnimationFrame(animate);
+  }, [target, trigger]);
+  return value;
+}
+
+function AnimatedStat({ value, trigger }: { value: string, trigger: boolean }) {
+  if (value.endsWith('%')) {
+    const target = parseFloat(value);
+    const animated = useCountUp(target, 1200, trigger);
+    return <span>{animated}%</span>;
+  } else if (/^[0-9,.]+$/.test(value.replace(/ /g, ''))) {
+    const target = parseFloat(value.replace(/,/g, ''));
+    const animated = useCountUp(target, 1200, trigger);
+    return <span>{animated}</span>;
+  } else {
+    // For non-numeric (e.g., '50+') just show as is
+    return <span>{value}</span>;
+  }
+}
 
 const Home: React.FC = () => {
   const stats = [
@@ -94,6 +133,9 @@ const Home: React.FC = () => {
     }
   };
 
+  const statsRef = useRef(null);
+  const inView = useInView(statsRef, { once: false, margin: '-100px' });
+
   return (
     <>
       {/* Robotics Motion Video Background */}
@@ -173,7 +215,7 @@ const Home: React.FC = () => {
         </section>
 
       {/* Stats Section */}
-        <section className="py-16 bg-saddlebrown-50">
+        <section className="py-16 bg-saddlebrown-50" ref={statsRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
@@ -189,7 +231,7 @@ const Home: React.FC = () => {
                 variants={scaleIn}
               >
                 <stat.icon className="h-8 w-8 text-primary-600 mx-auto mb-2" />
-                <div className="text-3xl font-bold text-primary-900 mb-1">{stat.number}</div>
+                  <div className="text-3xl font-bold text-primary-900 mb-1"><AnimatedStat value={stat.number} trigger={inView} /></div>
                 <div className="text-metallic-600">{stat.label}</div>
               </motion.div>
             ))}
