@@ -27,19 +27,19 @@ const About: React.FC = () => {
   return (
     <>
       {/* 3D Background Image - fixed, always visible */}
-      <div style={{ position: 'fixed', inset: 0, zIndex: -50, width: '100vw', height: '100vh', background: '#a0522d' }} />
+      <div className="fixed inset-0 -z-50 w-screen h-screen bg-gradient-to-r from-slate-100 to-blue-100" />
       <div className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 relative bg-saddlebrown-100">
+        <section className="py-20 relative bg-gradient-to-r from-slate-100 to-blue-100">
           {/* Overlay for readability */}
-          <div className="absolute inset-0 bg-saddlebrown-200/80 pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-100 to-blue-100 pointer-events-none z-0" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-700 drop-shadow-lg">
                 Pioneering the Future of
                 <span className="text-brand-300"> Food Automation Robotics</span>
               </h1>
-              <p className="text-xl text-white max-w-3xl mx-auto drop-shadow">
+              <p className="text-xl text-slate-700 max-w-3xl mx-auto drop-shadow">
                 Revolutionizing food operations with cutting-edge AI and robotics solutions. Transform your kitchens and food service with intelligent automation.
               </p>
             </div>
@@ -47,7 +47,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-20" style={{ backgroundColor: '#e0e0e0' }}>
+        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="border-2 border-brand rounded-xl p-8 bg-white/80">
@@ -85,7 +85,7 @@ const About: React.FC = () => {
         {/* Products section removed as requested */}
 
         {/* Company Timeline */}
-        <section className="py-20 bg-saddlebrown-200" id="our-journey">
+        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100" id="our-journey">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -170,7 +170,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Achievements */}
-        <section className="py-20 bg-saddlebrown-50">
+        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -194,7 +194,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Innovation Focus */}
-        <section className="py-20 bg-saddlebrown-100">
+        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>

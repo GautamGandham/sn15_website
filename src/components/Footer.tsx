@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Bot className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold text-white">Sn15 AI & Robotics</span>
+              <span className="text-2xl font-bold text-white">SN FIFTEEN AI & ROBOTICS</span>
             </div>
             <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
               Leading the future of warehouse automation with enterprise-grade AI and robotics solutions. 
@@ -107,8 +107,8 @@ const Footer: React.FC = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-300 text-sm">
-                  123 Innovation Drive<br />
-                  San Francisco, CA 94107
+                  bhavanipuram<br />
+                  vijayawada, andhra pradesh, india
                 </span>
               </li>
             </ul>

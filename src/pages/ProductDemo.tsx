@@ -103,16 +103,16 @@ const ProductDemo: React.FC = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 relative bg-saddlebrown-100">
+      <section className="py-20 relative bg-gradient-to-r from-slate-100 to-blue-100">
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-black/20 pointer-events-none z-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary-900 drop-shadow-lg">
               Experience Our Technology
               <span className="text-primary-300"> In Action</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto drop-shadow">
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto drop-shadow">
               Explore our cutting-edge robotics solutions through interactive demos, 
               technical specifications, and real-world case studies.
             </p>
@@ -121,7 +121,7 @@ const ProductDemo: React.FC = () => {
       </section>
 
       {/* Interactive Product Viewer */}
-      <section className="py-20 bg-saddlebrown-50">
+      <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -208,7 +208,7 @@ const ProductDemo: React.FC = () => {
       </section>
 
       {/* Video Demonstrations */}
-      <section className="py-20 bg-saddlebrown-200">
+      <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -267,7 +267,7 @@ const ProductDemo: React.FC = () => {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-20 bg-saddlebrown-100">
+      <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
