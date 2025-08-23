@@ -50,18 +50,18 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-21">
       {/* Hero Section */}
-      <section className="py-20 relative bg-saddlebrown-100">
+      <section className="py-20 relative bg-gradient-to-r from-blue-100 to-indigo-100">
         {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-black/20 pointer-events-none z-0" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 drop-shadow-lg">
               Let's Transform Your
-              <span className="text-primary-300"> Warehouse Together</span>
+              <span className="text-primary-600"> Warehouse Together</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto drop-shadow">
+            <p className="text-xl text-slate-700 max-w-3xl mx-auto drop-shadow">
               Ready to revolutionize your warehouse operations? Get in touch with our experts 
               for a personalized consultation and discover how we can help you achieve your goals.
             </p>
@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-saddlebrown-50">
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}

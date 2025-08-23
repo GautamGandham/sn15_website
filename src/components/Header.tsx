@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronUp, Brain, Code, Smartphone, Cloud, Bot, Eye, Sparkles, Settings, Zap, Globe } from 'lucide-react';
 import sn15Logo from '../assets/sn15-logo.png';
+import logoPng from '../assets/logo.png';
+import masterImage from '../assets/MASTER (1).png';
 import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const [showFloatingLogo, setShowFloatingLogo] = useState(false);
   const lastScrollY = useRef(0);
   const location = useLocation();
@@ -83,25 +84,18 @@ const Header = () => {
   ];
 
   const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesTimeout = useRef<NodeJS.Timeout | null>(null);
+  const servicesTimeout = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-      
       // Show floating logo when scrolled down
       if (currentScrollY > 200) {
         setShowFloatingLogo(true);
       } else {
         setShowFloatingLogo(false);
       }
-      
       lastScrollY.current = currentScrollY;
     };
 
@@ -114,31 +108,30 @@ const Header = () => {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Products', href: '/products' },
-    { name: 'Demo', href: '/demo' },
     { name: 'Team', href: '/team' },
-    { name: 'Contact', href: '/contact' },
+    // Removed Contact
   ];
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 py-2 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 py-1 ${
           isScrolled 
             ? 'bg-slate-700/95 backdrop-blur-md shadow-lg border-b border-slate-600' 
             : 'bg-slate-700/90 backdrop-blur-sm shadow-md'
-        } ${isHidden ? '-translate-y-full pointer-events-none' : 'translate-y-0 pointer-events-auto'} transform`}
+        } translate-y-0 pointer-events-auto`}
       >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3">
                 <img 
-                  src={sn15Logo} 
+                  src={logoPng} 
                   alt="SN15 AI & Robotics Logo" 
-                  className="h-16 w-16 object-contain" 
+                  className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain" 
                 />
                 <span className="text-lg font-semibold text-white leading-tight">
-                  SN Fifteen AI &<br />Robotics
+                  SNFifteen <br/>AI & Robotics
                 </span>
               </Link>
             </div>
@@ -155,7 +148,7 @@ const Header = () => {
                       setServicesOpen(true);
                     }}
                     onMouseLeave={() => {
-                      servicesTimeout.current = setTimeout(() => setServicesOpen(false), 150);
+                      servicesTimeout.current = window.setTimeout(() => setServicesOpen(false), 150);
                     }}
                   >
                     <span
@@ -235,13 +228,7 @@ const Header = () => {
                               <p className="text-sm font-medium text-slate-700">Need a custom solution?</p>
                               <p className="text-xs text-slate-500">Let's discuss your specific requirements</p>
                             </div>
-                            <Link
-                              to="/contact"
-                              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
-                              onClick={() => setServicesOpen(false)}
-                            >
-                              Get in Touch
-                            </Link>
+                            {/* Removed Get in Touch link */}
                           </div>
                         </div>
                       </div>
@@ -339,9 +326,9 @@ const Header = () => {
         </div>
       </header>
       
-      {/* Floating Circular Logo */}
+      {/* Floating Logo */}
       <motion.div
-        className="fixed top-8 left-8 z-40"
+        className="fixed top-10 left-2 z-40"
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={{ 
           opacity: showFloatingLogo ? 1 : 0,
@@ -355,11 +342,11 @@ const Header = () => {
         style={{ pointerEvents: showFloatingLogo ? 'auto' : 'none' }}
       >
         <Link to="/" className="block">
-          <div className="bg-white rounded-full shadow-2xl border-2 border-blue-200 p-4 hover:shadow-3xl hover:scale-105 transition-all duration-300">
+          <div className="hover:scale-110 transition-all duration-300 drop-shadow-2xl">
             <img 
               src={sn15Logo} 
               alt="SN15 AI & Robotics Logo" 
-              className="h-20 w-20 object-contain rounded-full" 
+              className="h-48 w-48 md:h-56 md:w-56 lg:h-64 lg:w-64 xl:h-72 xl:w-72 object-contain" 
             />
           </div>
         </Link>

@@ -1,40 +1,33 @@
 import React from 'react';
-import { Linkedin, Mail, Award, Users, Coffee, MapPin } from 'lucide-react';
+import { Mail, Award, Users, Coffee, MapPin } from 'lucide-react';
 
 const Team: React.FC = () => {
   const leadership = [
     {
       name: 'Challa vijayarama Naidu',
-      role: 'CEO & Co-Founder',
+      role: 'CTO & Co-Founder',
       bio: 'Former VP of Engineering at Tesla Autopilot with 15+ years in robotics and AI. PhD in Robotics from MIT.',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: '',
       expertise: ['AI/ML', 'Robotics', 'Leadership'],
-      linkedin: '#'
+      
     },
     {
       name: 'Jaya Prakash Yarlagadda',
-      role: 'CTO & Co-Founder',
+      role: 'CEO & Co-Founder',
       bio: 'Former Principal Engineer at Amazon Robotics. Led development of autonomous warehouse systems serving millions of customers.',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: '',
       expertise: ['Systems Architecture', 'Computer Vision', 'Automation'],
-      linkedin: '#'
+      
     },
     {
-      name: 'Kishore',
-      role: 'VP of Engineering',
+      name: 'Kishore Nagisetti',
+      role: 'COO & Co-Founder',
       bio: 'Former Senior Director at Boston Dynamics. Expert in autonomous navigation and fleet coordination systems.',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: '',
       expertise: ['Autonomous Systems', 'Fleet Management', 'Hardware'],
-      linkedin: '#'
+      
     },
-    {
-      name: 'David Kim',
-      role: 'VP of Sales & Operations',
-      bio: 'Former VP at Kiva Systems (acquired by Amazon). Deep expertise in warehouse operations and customer success.',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300',
-      expertise: ['Sales Strategy', 'Operations', 'Customer Success'],
-      linkedin: '#'
-    }
+   
   ];
 
   const jobOpenings = [
@@ -87,7 +80,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-21">
       {/* Hero Section */}
       <section className="py-20 relative">
         {/* Overlay for readability */}
@@ -107,7 +100,7 @@ const Team: React.FC = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 bg-saddlebrown-100">
+      <section className="py-20 bg-gradient-to-r from-blue-100 to-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -120,7 +113,7 @@ const Team: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {leadership.map((member, index) => (
-              <div key={index} className="bg-metallic-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
                 <div className="flex items-start space-x-6">
                   <img
                     src={member.image}
@@ -142,13 +135,12 @@ const Team: React.FC = () => {
                     
                     <div className="flex space-x-3">
                       <a
-                        href={member.linkedin}
-                        className="text-primary-600 hover:text-primary-800 transition-colors"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a
-                        href={`mailto:${member.name.toLowerCase().replace(' ', '.')}@snfifteen.com`}
+                        href={`mailto:${
+                          member.name === 'Challa vijayarama Naidu' ? 'vijay@sn15.ai' :
+                          member.name === 'Kishore Nagisetti' ? 'kishore@sn15.ai' :
+                          member.name === 'Jaya Prakash Yarlagadda' ? 'prakash@sn15.ai' :
+                          `${member.name.toLowerCase().replace(' ', '.')}@snfifteen.com`
+                        }`}
                         className="text-primary-600 hover:text-primary-800 transition-colors"
                       >
                         <Mail className="h-5 w-5" />
@@ -163,7 +155,7 @@ const Team: React.FC = () => {
       </section>
 
       {/* Company Culture */}
-      <section className="py-20 bg-saddlebrown-50">
+      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -205,7 +197,7 @@ const Team: React.FC = () => {
       </section>
 
       {/* Job Openings */}
-      <section className="py-20 bg-saddlebrown-200">
+      <section className="py-20 bg-gradient-to-r from-blue-100 to-indigo-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
@@ -218,7 +210,7 @@ const Team: React.FC = () => {
 
           <div className="space-y-6">
             {jobOpenings.map((job, index) => (
-              <div key={index} className="bg-metallic-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-white rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div className="flex-1">
                     <div className="flex items-center space-x-4 mb-2">

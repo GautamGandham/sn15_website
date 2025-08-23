@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Shield, TrendingUp, Users, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
-import bg1Video from '../assets/bg1.mp4';
-
-//const roboticsVideo = 'https://videos.pexels.com/video-files/8561925/8561925-hd_1920_1080_25fps.mp4';
+import bg000Video from '../assets/bg 000.mp4';
 
 // Custom hook for count up animation
 function useCountUp(target: number, duration = 1200, trigger: boolean) {
@@ -134,8 +132,6 @@ const Home: React.FC = () => {
     },
   ];
 
-  
-
   // Animation variants for scroll effects
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -145,24 +141,6 @@ const Home: React.FC = () => {
       transition: { duration: 0.6, ease: "easeOut" as const }
     }
   };
-
-  /*const fadeInLeft = {
-    hidden: { opacity: 0, x: -60 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const }
-    }
-  };
-
-  const fadeInRight = {
-    hidden: { opacity: 0, x: 60 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" as const }
-    }
-  };*/
 
   const scaleIn = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -187,85 +165,83 @@ const Home: React.FC = () => {
   const inView = useInView(statsRef, { once: false, margin: '-100px' });
 
   return (
-    <>
-      {/* Robotics Motion Video Background */}
-      <div className="fixed inset-0 w-screen h-screen -z-10 overflow-hidden">
+    <div className="pt-21 relative z-10">
+      {/* Hero Section - Reduced Size */}
+      <section className="relative min-h-[60vh] flex overflow-hidden">
+        {/* Video Background */}
         <video
           autoPlay
           loop
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover -z-10"
-          src={bg1Video}
+          src={bg000Video}
         />
-        <div className="absolute inset-0 bg-black/30" />
-      </div>
-      <div className="pt-20 relative z-10">
-      {/* Hero Section */}
-        <section className="relative min-h-[500px] flex items-center overflow-hidden">
-          {/* Video Background */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover -z-10"
-            src={bg1Video}
-          />
-          {/* Subtle Overlay */}
-          <div className="absolute inset-0 bg-black/20 -z-10" />
-          {/* Floating Content */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="animate-fade-in"
-              >
-                <motion.h1 
-                  className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white"
+        {/* Subtle Overlay */}
+        <div className="absolute inset-0 bg-black/40 -z-10" />
+
+        {/* Main Content Container */}
+        <div className="relative z-10 max-w-7xl mr-auto ml-4 sm:ml-6 lg:ml-8 px-2 sm:px-3 lg:px-4 py-12 w-full">
+          <div className="flex min-h-[50vh]">
+            {/* Left-Aligned Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative flex flex-col justify-center w-full max-w-4xl"
+            >
+              {/* Main Content */}
+              <div className="relative z-10">
+                <motion.h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white text-left"
                   initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  <span className="text-primary-400">Automate</span> the shift<br /> nobody wants to do
-                </motion.h1>
-                <motion.p 
-                  className="text-xl text-coffee-100 mb-8 leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                  Our food automation robots & AI agents free your team to focus on what matters most.
-                </motion.p>
-                <motion.div 
-                  className="flex flex-col sm:flex-row gap-4"
+                  <span className="text-yellow-400">Automate</span>
+                  <br />
+                  <span className="text-white">the shift</span>
+                  <br />
+                  <span className="text-gray-300">nobody wants to do</span>
+                </motion.h1>
+
+                <motion.p
+                  className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
+                  Our food automation robots & AI agents free your team to focus on what matters most.
+                </motion.p>
+
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
                   <Link
                     to="/demo"
-                    className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center group"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg font-bold text-base transition-all duration-200 flex items-center justify-center group shadow-xl sm:w-auto w-full"
                   >
                     Book Free Demo
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
                   <Link
                     to="/services"
-                    className="border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-center"
+                    className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-lg font-bold text-base transition-all duration-200 text-center shadow-xl sm:w-auto w-full"
                   >
                     Learn More
                   </Link>
                 </motion.div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Stats Section */}
-        <section className="py-16 bg-gradient-to-r from-slate-100 to-blue-100" ref={statsRef}>
+      <section className="py-16 bg-gradient-to-r from-slate-100 to-blue-100" ref={statsRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
@@ -281,7 +257,7 @@ const Home: React.FC = () => {
                 variants={scaleIn}
               >
                 <stat.icon className="h-8 w-8 text-primary-600 mx-auto mb-2" />
-                  <div className="text-3xl font-bold text-primary-900 mb-1"><AnimatedStat value={stat.number} trigger={inView} /></div>
+                <div className="text-3xl font-bold text-primary-900 mb-1"><AnimatedStat value={stat.number} trigger={inView} /></div>
                 <div className="text-metallic-600">{stat.label}</div>
               </motion.div>
             ))}
@@ -290,7 +266,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
+      <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -300,7 +276,7 @@ const Home: React.FC = () => {
             viewport={{ amount: 0.3 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">
-                Why Choose Sn15 AI & Robotics?
+              Why Choose Sn15 AI & Robotics?
             </h2>
             <p className="text-xl text-metallic-600 max-w-3xl mx-auto">
               Our cutting-edge technology delivers unmatched performance and reliability for your warehouse operations.
@@ -315,13 +291,13 @@ const Home: React.FC = () => {
             viewport={{ amount: 0.2 }}
           >
             {features.map((feature, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-center p-8 rounded-xl bg-metallic-50 hover:bg-primary-50 transition-all duration-300 group"
-                  variants={fadeInUp}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
+              <motion.div 
+                key={index} 
+                className="text-center p-8 rounded-xl bg-metallic-50 hover:bg-primary-50 transition-all duration-300 group"
+                variants={fadeInUp}
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
                 <feature.icon className="h-12 w-12 text-primary-600 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-semibold text-primary-900 mb-4">{feature.title}</h3>
                 <p className="text-metallic-600">{feature.description}</p>
@@ -445,7 +421,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
+      <section className="py-20 bg-gradient-to-r from-slate-100 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-6 text-primary-900"
@@ -464,7 +440,7 @@ const Home: React.FC = () => {
             viewport={{ amount: 0.3 }}
             transition={{ delay: 0.2 }}
           >
-            Join the automatiaon revolution and see immediate results in efficiency, accuracy, and cost savings.
+            Join the automation revolution and see immediate results in efficiency, accuracy, and cost savings.
           </motion.p>
           <motion.div
             variants={scaleIn}
@@ -474,17 +450,16 @@ const Home: React.FC = () => {
             transition={{ delay: 0.4 }}
           >
             <Link
-              to="/contact"
+              to="/book-demo"
               className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center"
             >
-              Get Started Today
+              Book Demo Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </motion.div>
         </div>
       </section>
     </div>
-    </>
   );
 };
 

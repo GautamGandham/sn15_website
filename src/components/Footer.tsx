@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Bot className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold text-white">SN FIFTEEN AI & ROBOTICS</span>
+              <span className="text-2xl font-bold text-white">SNFIFTEEN AI & ROBOTICS</span>
             </div>
             <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
               Leading the future of warehouse automation with enterprise-grade AI and robotics solutions. 
@@ -55,14 +55,7 @@ const Footer: React.FC = () => {
                   Our Services
                 </Link>
               </li>
-              <li>
-                <Link 
-                  to="/demo" 
-                  className="text-slate-300 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Request Demo
-                </Link>
-              </li>
+              {/* Removed Request Demo link */}
               <li>
                 <Link 
                   to="/team" 
@@ -89,19 +82,19 @@ const Footer: React.FC = () => {
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
                 <a 
-                  href="tel:+15551234567" 
+                  href="tel:+91 6301356646" 
                   className="text-slate-300 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  +1 (555) 123-4567
+                  +91 6301356646
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
                 <a 
-                  href="mailto:info@snfifteen.com" 
+                  href="mailto:support@sn15.ai" 
                   className="text-slate-300 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  info@snfifteen.com
+                  support@sn15.ai
                 </a>
               </li>
               <li className="flex items-start space-x-3">

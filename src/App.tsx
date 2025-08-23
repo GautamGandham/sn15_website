@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ChatBot from './components/ChatBot';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import ProductDemo from './pages/ProductDemo';
 import Team from './pages/Team';
-import Contact from './pages/Contact';
 import Products from './pages/Products';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -22,6 +21,17 @@ import EnterpriseSoftware from './pages/EnterpriseSoftware';
 import AIChatbotDevelopment from './pages/AIChatbotDevelopment';
 import CloudDevOps from './pages/CloudDevOps';
 
+// ScrollToTop component to handle scrolling to top on route changes
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   useEffect(() => {
     AOS.init({ once: true, duration: 800 });
@@ -29,6 +39,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen">
         <Header />
         <main>
@@ -45,14 +56,13 @@ function App() {
             <Route path="/services/enterprise-software" element={<EnterpriseSoftware />} />
             <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopment />} />
             <Route path="/services/cloud-devops" element={<CloudDevOps />} />
-            <Route path="/demo" element={<ProductDemo />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/products" element={<Products />} />
             <Route path="/book-demo" element={<BookDemo />} />
           </Routes>
         </main>
         <Footer />
+        <ChatBot />
       </div>
     </Router>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body, #root {
-  background-color: #a0522d;
+  background-color: #;
   min-height: 100vh;
   width: 100%;
 }
@@ -18,10 +18,10 @@ html, body, #root {
   pointer-events: none;
   animation: waveMove 12s linear infinite;
 }
-@keyframes waveMove {
+@keyframes waveMove 
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
+
 
 .wave-bg2 {
   position: absolute;
