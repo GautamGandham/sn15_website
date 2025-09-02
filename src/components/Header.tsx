@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, ChevronUp, Brain, Code, Smartphone, Cloud, Bot, Eye, Sparkles, Settings, Zap, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronUp, Brain, Code, Smartphone, Cloud, Bot, Eye, Sparkles, Settings, Zap, Globe, Coffee, Utensils, Package, Cpu } from 'lucide-react';
 import sn15Logo from '../assets/sn15-logo.png';
 import logoPng from '../assets/logo.png';
 import masterImage from '../assets/MASTER (1).png';
@@ -83,8 +83,80 @@ const Header = () => {
     }
   ];
 
+  // Enhanced Products dropdown structure (Software and Hardware)
+  const productCategories = [
+    {
+      title: 'Software',
+      icon: <Code className="w-5 h-5" />,
+      items: [
+        /*{ 
+          name: 'RoboControl Suite', 
+          path: '/products/robocontrol-suite', 
+          icon: <Cpu className="w-4 h-4" />,
+          description: 'Complete robotic system control platform'
+        },
+        { 
+          name: 'AI Recipe Optimizer', 
+          path: '/products/ai-recipe-optimizer', 
+          icon: <Sparkles className="w-4 h-4" />,
+          description: 'Intelligent recipe optimization system'
+        },*/
+        { 
+          name: 'Point of Sale (POS)', 
+          path: '/products/pos-system', 
+          icon: <Package className="w-4 h-4" />,
+          description: 'Modern POS system with AI integration'
+        },
+        { 
+          name: 'Welcome App', 
+          path: '/products/welcome-app', 
+          icon: <Smartphone className="w-4 h-4" />,
+          description: 'Customer greeting & engagement app'
+        },
+        { 
+          name: 'Dashboard', 
+          path: '/products/dashboard', 
+          icon: <Settings className="w-4 h-4" />,
+          description: 'Real-time analytics & monitoring'
+        },
+      ]
+    },
+    {
+      title: 'Hardware',
+      icon: <Settings className="w-5 h-5" />,
+      items: [
+        { 
+          name: 'Automated Coffee Machine', 
+          path: '/products/coffee-machine', 
+          icon: <Coffee className="w-4 h-4" />,
+          description: 'AI-powered automated coffee brewing system'
+        },
+        { 
+          name: 'Chutney Dispenser', 
+          path: '/products/chutney-dispenser', 
+          icon: <Utensils className="w-4 h-4" />,
+          description: 'Precise automated chutney dispensing unit'
+        },
+        { 
+          name: 'Vada Dispenser', 
+          path: '/products/vada-dispenser', 
+          icon: <Package className="w-4 h-4" />,
+          description: 'Automated vada preparation & serving system'
+        },
+        { 
+          name: 'Service Bot', 
+          path: '/products/service-bot', 
+          icon: <Bot className="w-4 h-4" />,
+          description: 'Autonomous customer service robot'
+        },
+      ]
+    }
+  ];
+
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTimeout = useRef<number | null>(null);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsTimeout = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,7 +187,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-4 py-1 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 px-1 py-1 ${
           isScrolled 
             ? 'bg-slate-700/95 backdrop-blur-md shadow-lg border-b border-slate-600' 
             : 'bg-slate-700/90 backdrop-blur-sm shadow-md'
@@ -126,9 +198,9 @@ const Header = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-3">
                 <img 
-                  src={logoPng} 
+                  src={sn15Logo} 
                   alt="SN15 AI & Robotics Logo" 
-                  className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 object-contain" 
+                  className="h-16 w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 object-contain" 
                 />
                 <span className="text-lg font-semibold text-white leading-tight">
                   SNFifteen <br/>AI & Robotics
@@ -162,7 +234,7 @@ const Header = () => {
                       <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
                     </span>
                     
-                    {/* Enhanced Dropdown */}
+                    {/* Enhanced Services Dropdown */}
                     <div
                       className={`absolute left-0 mt-3 w-[600px] z-50 transition-all duration-300 ${
                         servicesOpen 
@@ -228,7 +300,107 @@ const Header = () => {
                               <p className="text-sm font-medium text-slate-700">Need a custom solution?</p>
                               <p className="text-xs text-slate-500">Let's discuss your specific requirements</p>
                             </div>
-                            {/* Removed Get in Touch link */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : item.name === 'Products' ? (
+                  <div
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => {
+                      if (productsTimeout.current) clearTimeout(productsTimeout.current);
+                      setProductsOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      productsTimeout.current = window.setTimeout(() => setProductsOpen(false), 150);
+                    }}
+                  >
+                    <span
+                      className={`text-sm font-medium transition-all duration-200 hover:text-blue-300 relative ${
+                        location.pathname.startsWith('/products')
+                          ? 'text-blue-300 after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-blue-300'
+                          : 'text-slate-200 hover:text-white'
+                      } flex items-center cursor-pointer`}
+                    >
+                      {item.name}
+                      <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${productsOpen ? 'rotate-180' : ''}`} />
+                    </span>
+
+                    {/* Enhanced Products Dropdown - Now matching Services styling */}
+                    <div
+                      className={`absolute left-0 mt-3 w-[600px] z-50 transition-all duration-300 ${
+                        productsOpen 
+                          ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto' 
+                          : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                      } origin-top`}
+                      onMouseEnter={() => {
+                        if (productsTimeout.current) clearTimeout(productsTimeout.current);
+                        setProductsOpen(true);
+                      }}
+                      onMouseLeave={() => {
+                        productsTimeout.current = setTimeout(() => setProductsOpen(false), 150);
+                      }}
+                    >
+                      <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 ring-1 ring-blue-100/40 overflow-hidden">
+                        <div className="grid grid-cols-2 gap-0">
+                          {productCategories.map((category, categoryIndex) => (
+                            <div 
+                              key={category.title} 
+                              className={`p-6 ${categoryIndex === 0 ? 'border-r border-slate-200' : ''}`}
+                            >
+                              {/* Category Header */}
+                              <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+                                <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                                  {category.icon}
+                                </div>
+                                <h3 className="font-bold text-lg text-slate-800">{category.title}</h3>
+                              </div>
+                              
+                              {/* Category Products */}
+                              <div className="space-y-1">
+                                {category.items.map((product) => (
+                                  <Link
+                                    key={product.path}
+                                    to={product.path}
+                                    className="block px-3 py-3 rounded-xl hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 group"
+                                    onClick={() => setProductsOpen(false)}
+                                  >
+                                    <div className="flex items-start gap-3">
+                                      <div className="text-slate-400 group-hover:text-blue-500 transition-colors duration-200 mt-1">
+                                        {product.icon}
+                                      </div>
+                                      <div className="flex-1 min-w-0">
+                                        <div className="font-semibold text-slate-700 group-hover:text-blue-700 text-sm leading-tight mb-1">
+                                          {product.name}
+                                        </div>
+                                        <div className="text-xs text-slate-500 group-hover:text-blue-600 leading-relaxed">
+                                          {product.description}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Footer CTA */}
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-4 border-t border-slate-100">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <p className="text-sm font-medium text-slate-700">Interested in our products?</p>
+                              <p className="text-xs text-slate-500">Schedule a demo to see them in action</p>
+                            </div>
+                            <Link
+                              to="/book-demo"
+                              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+                              onClick={() => setProductsOpen(false)}
+                            >
+                              Schedule Demo
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -296,6 +468,36 @@ const Header = () => {
                             ))}
                           </div>
                         ))}
+                      </div>
+                    </div>
+                  ) : item.name === 'Products' ? (
+                    <div key={item.name}>
+                      <span className="text-sm font-medium text-slate-200 py-1 block">Products</span>
+                      <div className="ml-4 mt-2 space-y-2">
+                        {productCategories.map((category) => (
+                          <div key={category.title} className="space-y-1">
+                            <div className="text-xs font-medium text-blue-300 uppercase tracking-wide py-1">
+                              {category.title}
+                            </div>
+                            {category.items.map((product) => (
+                              <Link
+                                key={product.path}
+                                to={product.path}
+                                className="block text-sm text-slate-300 hover:text-white py-1 pl-2"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {product.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                        <Link
+                          to="/book-demo"
+                          className="inline-block mt-3 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Schedule Demo
+                        </Link>
                       </div>
                     </div>
                   ) : (

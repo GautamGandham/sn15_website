@@ -442,21 +442,6 @@ const Home: React.FC = () => {
           >
             Join the automation revolution and see immediate results in efficiency, accuracy, and cost savings.
           </motion.p>
-          <motion.div
-            variants={scaleIn}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }}
-            transition={{ delay: 0.4 }}
-          >
-            <Link
-              to="/book-demo"
-              className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center"
-            >
-              Book Demo Today
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>

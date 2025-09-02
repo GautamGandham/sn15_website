@@ -8,6 +8,14 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Team from './pages/Team';
 import Products from './pages/Products';
+// Product detail pages
+import CoffeeMachine from './pages/products/CoffeeMachine';
+import ChutneyDispenser from './pages/products/ChutneyDispenser';
+import VadaDispenser from './pages/products/VadaDispenser';
+import ServiceBot from './pages/products/ServiceBot';
+import POS from './pages/products/POS';
+import Dashboard from './pages/products/Dashboard';
+import WelcomeApp from './pages/products/WelcomeApp';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import BookDemo from './pages/BookDemo';
@@ -58,6 +66,14 @@ function App() {
             <Route path="/services/cloud-devops" element={<CloudDevOps />} />
             <Route path="/team" element={<Team />} />
             <Route path="/products" element={<Products />} />
+            {/* Product detail routes */}
+            <Route path="/products/coffee-machine" element={<CoffeeMachine />} />
+            <Route path="/products/chutney-dispenser" element={<ChutneyDispenser />} />
+            <Route path="/products/vada-dispenser" element={<VadaDispenser />} />
+            <Route path="/products/service-bot" element={<ServiceBot />} />
+            <Route path="/products/pos-system" element={<POS />} />
+            <Route path="/products/dashboard" element={<Dashboard />} />
+            <Route path="/products/welcome-app" element={<WelcomeApp />} />
             <Route path="/book-demo" element={<BookDemo />} />
           </Routes>
         </main>

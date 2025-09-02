@@ -4,7 +4,7 @@ import { Mail, Award, Users, Coffee, MapPin } from 'lucide-react';
 const Team: React.FC = () => {
   const leadership = [
     {
-      name: 'Challa vijayarama Naidu',
+      name: 'Vijay Challa',
       role: 'CTO & Co-Founder',
       bio: 'Former VP of Engineering at Tesla Autopilot with 15+ years in robotics and AI. PhD in Robotics from MIT.',
       image: '',
@@ -34,7 +34,7 @@ const Team: React.FC = () => {
     {
       title: 'Senior Robotics Engineer',
       department: 'Engineering',
-      location: 'San Francisco, CA',
+      location: 'Remote',
       type: 'Full-time',
       description: 'Design and develop autonomous robotic systems for warehouse automation.'
     },
@@ -48,14 +48,14 @@ const Team: React.FC = () => {
     {
       title: 'Customer Success Manager',
       department: 'Sales',
-      location: 'New York, NY',
+      location: 'Remote',
       type: 'Full-time',
       description: 'Ensure successful deployment and adoption of our automation solutions.'
     },
     {
       title: 'Hardware Engineer',
       department: 'Engineering',
-      location: 'San Francisco, CA',
+      location: 'Remote',
       type: 'Full-time',
       description: 'Design and optimize robotic hardware components and systems.'
     }
@@ -246,7 +246,7 @@ const Team: React.FC = () => {
               Don't see a position that matches your skills?
             </p>
             <button className="bg-primary-100 text-primary-800 px-6 py-3 rounded-lg font-semibold hover:bg-primary-200 transition-colors duration-200">
-              Send Us Your Resume
+              Send Us Your Resume<br/> support@sn15.ai
             </button>
           </div>
         </div>
