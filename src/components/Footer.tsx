@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               <span className="text-2xl font-bold text-white">SNFIFTEEN AI & ROBOTICS</span>
             </div>
             <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
-              Leading the future of warehouse automation with enterprise-grade AI and robotics solutions. 
+              Leading the future of buisiness automation with enterprise-grade AI and robotics solutions. 
               Enhance operational efficiency, reduce costs, and scale your logistics operations with our proven technology.
             </p>
             <div className="flex space-x-4">

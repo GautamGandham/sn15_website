@@ -430,7 +430,7 @@ const Home: React.FC = () => {
             whileInView="visible"
             viewport={{ amount: 0.3 }}
           >
-            Ready to Transform Your Warehouse?
+            Ready to Transform Your buisiness?
           </motion.h2>
           <motion.p 
             className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto"
