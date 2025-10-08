@@ -52,7 +52,7 @@ const ProductDemo: React.FC = () => {
     {
       name: 'Robo Arm (Planned)',
       category: 'Future Automation Project',
-      description: 'A next-gen robotic arm for advanced food and warehouse automation. Stay tuned for more details!',
+      description: 'A next-gen robotic arm for advanced food and business automation. Stay tuned for more details!',
       specs: {
         'Status': 'In Development',
         'Release': 'TBA',
@@ -215,7 +215,7 @@ const ProductDemo: React.FC = () => {
               See Our Robots in Action
             </h2>
             <p className="text-xl text-metallic-600">
-              Watch real deployments in working warehouses
+              Watch real deployments in working businesses
             </p>
           </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Bot, CheckCircle2 } from 'lucide-react';
+import botImg from '../../assets/bot.jpg';
 
 const ServiceBot: React.FC = () => {
   const features = [
@@ -24,8 +25,8 @@ const ServiceBot: React.FC = () => {
                 Enhance your venue with autonomous, friendly, and intelligent service robots that delight customers and reduce workload.
               </p>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=700&fit=crop" alt="Service Bot" className="w-full h-80 object-cover" />
+            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden p-4">
+              <img src={botImg} alt="Service Bot" className="w-full h-80 object-contain rounded-2xl bg-gray-50" />
             </div>
           </div>
         </div>

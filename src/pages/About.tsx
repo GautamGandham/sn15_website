@@ -9,10 +9,10 @@ const bg3d = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=
 
 const About: React.FC = () => {
   const milestones = [
-    { year: '2019', title: 'Company Founded', description: 'Started with a vision to revolutionize warehouse automation' },
-    { year: '2020', title: 'First Product Launch', description: 'Deployed our first autonomous warehouse robot' },
+    { year: '2019', title: 'Company Founded', description: 'Started with a vision to revolutionize business automation' },
+    { year: '2020', title: 'First Product Launch', description: 'Deployed our first autonomous business robot' },
     { year: '2021', title: 'Series A Funding', description: 'Raised $15M to scale operations and R&D' },
-    { year: '2022', title: '50+ Clients', description: 'Successfully deployed solutions across 50+ warehouses' },
+    { year: '2022', title: '50+ Clients', description: 'Successfully deployed solutions across 50+ businesses' },
     { year: '2023', title: 'AI Breakthrough', description: 'Launched next-gen AI-powered optimization platform' },
     { year: '2024', title: 'Global Expansion', description: 'Expanded operations to Europe and Asia' },
   ];
@@ -203,7 +203,7 @@ const About: React.FC = () => {
                 </h2>
                 <p className="text-gray-700 text-lg mb-6">
                   We invest heavily in research and development, with 40% of our team dedicated to 
-                  pushing the boundaries of what's possible in warehouse automation.
+                  pushing the boundaries of what's possible in business automation.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-gray-700">

@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     email: '',
     company: '',
     phone: '',
-    warehouseSize: '',
+    businessSize: '',
     currentVolume: '',
     message: '',
     timeline: ''
@@ -59,10 +59,10 @@ const Contact: React.FC = () => {
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 drop-shadow-lg">
               Let's Transform Your
-              <span className="text-primary-600"> Warehouse Together</span>
+              <span className="text-primary-600"> Business Together</span>
             </h1>
             <p className="text-xl text-slate-700 max-w-3xl mx-auto drop-shadow">
-              Ready to revolutionize your warehouse operations? Get in touch with our experts 
+              Ready to revolutionize your business operations? Get in touch with our experts 
               for a personalized consultation and discover how we can help you achieve your goals.
             </p>
           </div>
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                       <h2 className="text-2xl font-bold text-primary-900">
                         {currentStep === 1 && 'What can we help you with?'}
                         {currentStep === 2 && 'Tell us about yourself'}
-                        {currentStep === 3 && 'Your warehouse details'}
+                        {currentStep === 3 && 'Your business details'}
                       </h2>
                       <span className="text-metallic-500">Step {currentStep} of 3</span>
                     </div>
@@ -296,17 +296,17 @@ const Contact: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Step 3: Warehouse Details */}
+                  {/* Step 3: Business Details */}
                   {currentStep === 3 && (
                     <div className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-sm font-medium text-metallic-700 mb-2">
-                            Warehouse Size (sq ft)
+                            Business Size (sq ft)
                           </label>
                           <select
-                            name="warehouseSize"
-                            value={formData.warehouseSize}
+                            name="businessSize"
+                            value={formData.businessSize}
                             onChange={handleInputChange}
                             className="w-full px-4 py-3 border border-metallic-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           >
@@ -406,7 +406,7 @@ const Contact: React.FC = () => {
                         </p>
                         <ul className="text-left text-primary-700 mt-2 space-y-1">
                           <li>• Initial consultation call (30 minutes)</li>
-                          <li>• Warehouse assessment and requirements analysis</li>
+                          <li>• Business assessment and requirements analysis</li>
                           <li>• Custom solution proposal</li>
                           <li>• Live demonstration (if applicable)</li>
                         </ul>

@@ -1,4 +1,5 @@
 import React from 'react';
+import vijayImg from '../assets/vijay.jpg';
 import { Mail, Award, Users, Coffee, MapPin } from 'lucide-react';
 
 const Team: React.FC = () => {
@@ -7,14 +8,14 @@ const Team: React.FC = () => {
       name: 'Vijay Challa',
       role: 'CTO & Co-Founder',
       bio: 'Former VP of Engineering at Tesla Autopilot with 15+ years in robotics and AI. PhD in Robotics from MIT.',
-      image: '',
+      image: vijayImg,
       expertise: ['AI/ML', 'Robotics', 'Leadership'],
       
     },
     {
       name: 'Jaya Prakash Yarlagadda',
       role: 'CEO & Co-Founder',
-      bio: 'Former Principal Engineer at Amazon Robotics. Led development of autonomous warehouse systems serving millions of customers.',
+      bio: 'Former Principal Engineer at Amazon Robotics. Led development of autonomous business systems serving millions of customers.',
       image: '',
       expertise: ['Systems Architecture', 'Computer Vision', 'Automation'],
       
@@ -36,7 +37,7 @@ const Team: React.FC = () => {
       department: 'Engineering',
       location: 'Remote',
       type: 'Full-time',
-      description: 'Design and develop autonomous robotic systems for warehouse automation.'
+      description: 'Design and develop autonomous robotic systems for business automation.'
     },
     {
       title: 'AI/ML Engineer',
@@ -92,7 +93,7 @@ const Team: React.FC = () => {
               <span className="text-primary-300"> the Innovation</span>
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto drop-shadow">
-              Our world-class team combines decades of experience in robotics, AI, and warehouse operations 
+              Our world-class team combines decades of experience in robotics, AI, and business operations 
               to deliver cutting-edge automation solutions.
             </p>
           </div>
@@ -107,7 +108,7 @@ const Team: React.FC = () => {
               Leadership Team
             </h2>
             <p className="text-xl text-metallic-600">
-              Industry veterans leading the future of warehouse automation
+              Industry veterans leading the future of business automation
             </p>
           </div>
 
@@ -204,7 +205,7 @@ const Team: React.FC = () => {
               Join Our Team
             </h2>
             <p className="text-xl text-metallic-600">
-              Help us build the future of warehouse automation
+              Help us build the future of business automation
             </p>
           </div>
 
@@ -259,7 +260,7 @@ const Team: React.FC = () => {
             Ready to Shape the Future?
           </h2>
           <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
-            Join our team of innovators and help transform the warehouse automation industry.
+            Join our team of innovators and help transform the business automation industry.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">

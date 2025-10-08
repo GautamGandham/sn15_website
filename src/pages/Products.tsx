@@ -1,18 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
+import chutneyImg from '../assets/chutney.avif';
+import botImg from '../assets/bot.jpg';
+import coffeeImg from '../assets/coffee.jpg';
 
 const hardwareProducts = [
   {
     name: 'Automated Coffee Machine',
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop',
+    image: coffeeImg,
     description:
       'A smart coffee machine that automates the brewing process, offering a perfect cup every time with minimal human intervention. Ideal for offices, cafes, and public spaces.',
     details: 'Features: One-touch operation, self-cleaning, IoT-enabled, customizable recipes.'
   },
   {
     name: 'Chutney Dispenser',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&h=300&fit=crop',
+    image: chutneyImg,
     description:
       'Revolutionizing food service with AI-driven automation, ensuring consistency, precision, and efficiency every time. Perfect for restaurants and food courts.',
     details: 'Features: AI-driven portion control, hygienic touchless operation, multiple sauce compatibility, easy refill system.'
@@ -26,7 +29,7 @@ const hardwareProducts = [
   },
   {
     name: 'Service Bot',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop',
+    image: botImg,
     description:
       'Designed to enhance customer engagement, our AI service bot automates inquiries, offers personalized recommendations, and handles support with physical presence.',
     details: 'Features: Natural language processing, autonomous navigation, voice interaction, 24/7 availability.'
@@ -68,13 +71,13 @@ const softwareProducts = [
 
 const Products = () => {
   const [category, setCategory] = useState('Hardware');
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
   const [slideDirection, setSlideDirection] = useState('right');
   const [showCategorySelector, setShowCategorySelector] = useState(false);
-  const touchStartX = useRef(null);
-  const intervalRef = useRef(null);
-  const categorySelectorRef = useRef(null);
+  const touchStartX = useRef<number | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const categorySelectorRef = useRef<HTMLDivElement | null>(null);
 
   // Auto-switch only when not manually controlled
   useEffect(() => {
@@ -97,8 +100,8 @@ const Products = () => {
 
   // Click outside to close category selector
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (categorySelectorRef.current && !categorySelectorRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (categorySelectorRef.current && !categorySelectorRef.current.contains(event.target as Node)) {
         setShowCategorySelector(false);
       }
     };
@@ -107,11 +110,11 @@ const Products = () => {
   }, []);
 
   // Swipe gesture handlers
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
   
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const deltaX = e.changedTouches[0].clientX - touchStartX.current;
     if (category === 'Hardware' && deltaX > 60) {
@@ -129,7 +132,7 @@ const Products = () => {
   };
 
   // Category change handler
-  const handleCategoryChange = (newCategory) => {
+  const handleCategoryChange = (newCategory: string) => {
     if (newCategory !== category) {
       setSlideDirection(newCategory === 'Software' ? 'right' : 'left');
       setCategory(newCategory);
@@ -289,11 +292,11 @@ const Products = () => {
                     onMouseEnter={() => setHoveredProduct(idx)}
                     onMouseLeave={() => setHoveredProduct(null)}
                   >
-                    <div className="relative overflow-hidden">
+                    <div className="relative overflow-hidden bg-gray-50 p-4">
                       <img 
                         src={product.image} 
                         alt={product.name} 
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" 
+                        className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105 rounded-lg" 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                     </div>
@@ -341,11 +344,13 @@ const Products = () => {
                 >
                   <div className="grid md:grid-cols-2 gap-8 items-start">
                     <div>
-                      <img 
-                        src={currentProducts[selectedProduct].image} 
-                        alt={currentProducts[selectedProduct].name} 
-                        className="w-full h-64 object-cover rounded-lg shadow-sm border border-slate-100" 
-                      />
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <img 
+                          src={currentProducts[selectedProduct].image} 
+                          alt={currentProducts[selectedProduct].name} 
+                          className="w-full h-64 object-contain rounded-lg shadow-sm border border-slate-100" 
+                        />
+                      </div>
                     </div>
                     <div>
                       <div className="flex items-start justify-between mb-4">

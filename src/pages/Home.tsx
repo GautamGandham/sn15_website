@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, TrendingUp, Users, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle, ChevronDown, ChevronUp, Lightbulb } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import bg000Video from '../assets/bg 000.mp4';
 
@@ -47,6 +47,90 @@ const Home: React.FC = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   
   const technologies = {
+    agenticAI: {
+      title: 'Agentic AI',
+      icon: '🤖',
+      technologies: [
+        {
+          name: 'Autonomous AI Agents',
+          description: 'Self-directed AI systems that can perceive, reason, and act independently to achieve specific goals with minimal human intervention.',
+          features: ['Goal-oriented decision making', 'Context-aware reasoning', 'Multi-agent collaboration', 'Adaptive learning', 'Task planning and execution']
+        },
+        {
+          name: 'Conversational AI Agents',
+          description: 'Advanced AI agents capable of natural language understanding and generation for intelligent customer interactions and support.',
+          features: ['Natural language processing', 'Intent recognition', 'Multi-turn conversations', 'Sentiment analysis', 'Personalized responses']
+        },
+        {
+          name: 'Workflow Automation Agents',
+          description: 'Intelligent agents that automate complex business workflows by understanding processes and making autonomous decisions.',
+          features: ['Process optimization', 'Dynamic workflow adaptation', 'Error handling and recovery', 'Integration with existing systems', 'Performance monitoring']
+        }
+      ]
+    },
+    robotics: {
+      title: 'Robotics',
+      icon: '🦾',
+      technologies: [
+        {
+          name: 'Industrial Robotics',
+          description: 'High-precision robotic systems designed for manufacturing, assembly, and material handling in industrial environments.',
+          features: ['Precision movement control', 'Heavy payload handling', 'Repeatability and accuracy', 'Safety systems integration', 'Production line automation']
+        },
+        {
+          name: 'Service Robotics',
+          description: 'Robots designed to assist humans in various service industries including food service, hospitality, and healthcare.',
+          features: ['Human-robot interaction', 'Navigation and obstacle avoidance', 'Task-specific end effectors', 'Customer engagement capabilities', 'Autonomous operation']
+        },
+        {
+          name: 'Collaborative Robots (Cobots)',
+          description: 'Safe, flexible robots designed to work alongside humans in shared workspaces with advanced safety features.',
+          features: ['Force-limiting safety', 'Easy programming and setup', 'Flexible deployment', 'Human collaboration', 'Lightweight and portable']
+        }
+      ]
+    },
+    computerVision: {
+      title: 'Computer Vision',
+      icon: '👁️',
+      technologies: [
+        {
+          name: 'Object Detection & Recognition',
+          description: 'Advanced computer vision systems that identify and classify objects in images and video streams in real-time.',
+          features: ['Real-time object detection', 'Multi-class recognition', 'High accuracy tracking', 'Scale and rotation invariance', 'Edge computing support']
+        },
+        {
+          name: 'Visual Quality Inspection',
+          description: 'Automated visual inspection systems for quality control using deep learning and image processing techniques.',
+          features: ['Defect detection', 'Dimensional measurement', 'Surface inspection', 'Color verification', 'Statistical analysis']
+        },
+        {
+          name: '3D Vision Systems',
+          description: 'Advanced 3D imaging and depth perception systems for spatial awareness and precise manipulation tasks.',
+          features: ['Depth mapping', 'Point cloud processing', '3D reconstruction', 'Pose estimation', 'Volumetric analysis']
+        }
+      ]
+    },
+    mechatronics: {
+      title: 'Mechatronics',
+      icon: '⚙️',
+      technologies: [
+        {
+          name: 'Motion Control Systems',
+          description: 'Integrated systems combining mechanical, electronic, and software components for precise motion control and automation.',
+          features: ['Servo motor control', 'Trajectory planning', 'Position feedback systems', 'Real-time control', 'Multi-axis coordination']
+        },
+        {
+          name: 'Sensor Integration',
+          description: 'Advanced sensor fusion systems that combine multiple sensor types for comprehensive environmental awareness.',
+          features: ['Multi-sensor fusion', 'Force and torque sensing', 'Proximity detection', 'Environmental monitoring', 'Data acquisition systems']
+        },
+        {
+          name: 'Embedded Control Systems',
+          description: 'Real-time embedded systems for controlling mechatronic devices with high reliability and performance.',
+          features: ['Real-time operating systems', 'Low-latency control', 'Hardware abstraction', 'Safety-critical systems', 'Industrial protocols']
+        }
+      ]
+    },
     frontend: {
       title: 'Frontend',
       icon: '🎨',
@@ -110,7 +194,7 @@ const Home: React.FC = () => {
   const stats = [
     { number: '300%', label: 'Efficiency Increase', icon: TrendingUp },
     { number: '99.9%', label: 'Accuracy Rate', icon: CheckCircle },
-    { number: '50+', label: 'Happy Clients', icon: Users },
+    { number: 'Cutting-Edge', label: 'Innovative Solutions', icon: Lightbulb },
     { number: '24/7', label: 'System Uptime', icon: Shield },
   ];
     
@@ -279,7 +363,7 @@ const Home: React.FC = () => {
               Why Choose Sn15 AI & Robotics?
             </h2>
             <p className="text-xl text-metallic-600 max-w-3xl mx-auto">
-              Our cutting-edge technology delivers unmatched performance and reliability for your warehouse operations.
+              Our cutting-edge technology delivers unmatched performance and reliability for your business operations.
             </p>
           </motion.div>
 

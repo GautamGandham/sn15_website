@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Sparkles, Brain, PenTool, MessageSquare, Code, Zap, Clock, Users, CheckCircle2, ArrowRight, Play, BarChart3, Settings, Cpu, Database, Award, TrendingUp, FileText, Video, Music, Target, CheckCircle, Lightbulb, Mic } from 'lucide-react';
+import { useState } from 'react';
+import { Sparkles, Brain, MessageSquare, Users, CheckCircle2, ArrowRight, Play, Settings, Database, Award, CheckCircle, Mic } from 'lucide-react';
 
 const GenerativeAISolutions = () => {
  const [activeTab, setActiveTab] = useState('chatbots-ivr');
@@ -73,12 +73,6 @@ const GenerativeAISolutions = () => {
  }
  };
 
- const stats = [
- { label: 'Response Accuracy', value: '97.2%', icon: <Target className="w-5 h-5" /> },
- { label: 'Response Time', value: '<120ms', icon: <Zap className="w-5 h-5" /> },
- { label: 'AWS Services Used', value: '15+', icon: <Database className="w-5 h-5" /> },
- { label: 'Deployments', value: '500+', icon: <MessageSquare className="w-5 h-5" /> }
- ];
 
  const processSteps = [
  {
@@ -187,22 +181,6 @@ const GenerativeAISolutions = () => {
  </div>
  </section>
 
- {/* Stats Section */}
- <section className="py-12 bg-white/60 backdrop-blur-sm">
- <div className="max-w-7xl mx-auto px-6">
- <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
- {stats.map((stat, index) => (
- <div key={index} className="text-center group">
- <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-xl text-purple-600 mb-3 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-200">
- {stat.icon}
- </div>
- <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
- <div className="text-gray-600 font-medium">{stat.label}</div>
- </div>
- ))}
- </div>
- </div>
- </section>
 
  {/* Services We Provide Section */}
  <section className="py-20">

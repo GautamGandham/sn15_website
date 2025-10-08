@@ -1,5 +1,6 @@
 import React from 'react';
 import { Coffee, CheckCircle2 } from 'lucide-react';
+import coffeeImg from '../../assets/coffee.jpg';
 
 const CoffeeMachine: React.FC = () => {
   const features = [
@@ -24,8 +25,8 @@ const CoffeeMachine: React.FC = () => {
                 AI-powered brewing that delivers a perfect cup, every time. Built for cafes, offices, and public venues where speed and consistency matter.
               </p>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=700&fit=crop" alt="Automated Coffee Machine" className="w-full h-80 object-cover" />
+            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden p-4">
+              <img src={coffeeImg} alt="Automated Coffee Machine" className="w-full h-80 object-contain rounded-2xl bg-gray-50" />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Utensils, CheckCircle2 } from 'lucide-react';
+import chutneyImg from '../../assets/chutney.avif';
 
 const ChutneyDispenser: React.FC = () => {
   const features = [
@@ -24,8 +25,8 @@ const ChutneyDispenser: React.FC = () => {
                 Precision dispensing for fast, clean, and consistent servings—perfect for restaurants and food courts.
               </p>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1200&h=700&fit=crop" alt="Chutney Dispenser" className="w-full h-80 object-cover" />
+            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden p-4">
+              <img src={chutneyImg} alt="Chutney Dispenser" className="w-full h-80 object-contain rounded-2xl bg-gray-50" />
             </div>
           </div>
         </div>
