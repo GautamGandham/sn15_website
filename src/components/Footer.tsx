@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                   to="/case-studies" 
                   className="text-slate-300 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  Case Studies
+                  
                 </Link>
               </li>
             </ul>

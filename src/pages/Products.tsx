@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import chutneyImg from '../assets/chutney.avif';
 import botImg from '../assets/bot.jpg';
 import coffeeImg from '../assets/coffee.jpg';
+import vadaImg from '../assets/vadamachine.jpeg';
 
 const hardwareProducts = [
   {
@@ -22,7 +23,7 @@ const hardwareProducts = [
   },
   {
     name: 'Vada Dispenser',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=300&fit=crop',
+    image: vadaImg,
     description:
       'A smart vending solution for perfectly crafted vadas, utilizing AI for perfect portioning and quality control. Automated preparation meets traditional taste.',
     details: 'Features: AI quality control, perfect portioning, temperature monitoring, automated cooking cycle.'

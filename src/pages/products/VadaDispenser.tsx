@@ -1,5 +1,6 @@
 import React from 'react';
 import { Package, CheckCircle2 } from 'lucide-react';
+import vadaImg from '../../assets/vadamachine.jpeg';
 
 const VadaDispenser: React.FC = () => {
   const features = [
@@ -24,8 +25,8 @@ const VadaDispenser: React.FC = () => {
                 Traditional taste meets modern automation—produce perfect vadas at scale with minimal effort.
               </p>
             </div>
-            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&h=700&fit=crop" alt="Vada Dispenser" className="w-full h-80 object-cover" />
+            <div className="bg-white rounded-3xl shadow-2xl border border-blue-100 overflow-hidden p-4">
+              <img src={vadaImg} alt="Vada Dispenser" className="w-full h-80 object-contain rounded-2xl bg-gray-50" />
             </div>
           </div>
         </div>
